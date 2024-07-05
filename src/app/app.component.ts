@@ -1,13 +1,45 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+import { CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true
 })
 export class AppComponent {
-  title = '1705-David';
+  title: string = '1705 David'
+  @ViewChild('owlElement') owlElement!: CarouselComponent;
+
+  slides = [
+    { image: 'public/living-room1.jpg', alt: 'Living Room 1' },
+    { image: 'public/living-room2.jpg', alt: 'Living Room 2' },
+    { image: 'public/bedroom1.jpg', alt: 'Bedroom 1' },
+    { image: 'public/bedroom2.jpg', alt: 'Bedroom 2' },
+    { image: 'public/kitchen1.jpg', alt: 'Kitchen 1' },
+    { image: 'public/kitchen2.jpg', alt: 'Kitchen 2' },
+    // Add more images as needed
+  ];
+
+  carouselOptions = {
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  };
+
+  scrollToSection(index: number) {
+    const sectionIndex = [0, 2, 4]; // Living Room starts at 0, Bedroom at 2, Kitchen at 4
+    this.owlElement.to([sectionIndex[index]].toString());
+  }
 }
