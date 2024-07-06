@@ -11,6 +11,18 @@ export class AppComponent {
   title: string = '1705 David'
   @ViewChild('owlElement') owlElement!: CarouselComponent;
 
+  descriptionItems: string[] = [
+    '3 bedrooms',
+    '1.75 baths',
+    '1000 sqft',
+    '1 Car Garage',
+    'Backyard fence, shed, patio area',
+    'Central Air, Heat',
+    'Washer, Dryer hookups',
+    'Shaded Front Porch',
+    'Stand Up Garden Bed',
+  ]
+
   slides = [
     { image: 'public/living-room1.jpg', alt: 'Living Room 1' },
     { image: 'public/living-room2.jpg', alt: 'Living Room 2' },

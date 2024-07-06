@@ -1,59 +1,174 @@
+:host {
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --pill-accent: var(--french-violet);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+}
+
+p {
+    margin: 0;
+    color: var(--gray-700);
+}
+
+.pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+}
+
+.pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+}
+
+.pill-group .pill {
+    --pill-accent: var(--french-violet);
+}
+
+.pill-group svg {
+    margin-inline-start: 0.25rem;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  
+
     h1 {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
-  
+
     .description {
-      margin-bottom: 20px;
-      text-align: left;
-  
-      ul {
-        list-style-type: disc;
-        padding-left: 20px;
+        margin-bottom: 20px;
         text-align: left;
-  
-        li {
-          margin-bottom: 5px;
-          font-size: 16px;
+        width: 60%; /* Adjust the width as needed */
+
+        ul {
+            padding-left: 20px;
+            columns: 2;
+            column-gap: 40px;
+            list-style: none; /* Remove default list style */
+            text-align: left;
+      
+            li {
+              margin-bottom: 5px;
+              font-size: 16px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              position: relative;
+              padding-left: 1em; /* Space for the bullet */
+      
+              &::before {
+                content: '•'; /* Bullet character */
+                position: absolute;
+                left: 0;
+                color: black; /* Bullet color */
+              }
+            }
         }
+
+        // ul {
+        //   list-style-type: disc;
+        //   padding-left: 20px;
+        //   columns: 2;
+        //   column-gap: 40px;
+        //   text-align: left;
+    
+        //   li {
+        //     margin-bottom: 5px;
+        //     font-size: 16px;
+        //   }
+        // }
       }
-    }
-  
+    
+
+    // .description {
+    //     margin-bottom: 20px;
+    //     text-align: left;
+
+    //     ul {
+    //         list-style-type: disc;
+    //         padding-left: 20px;
+    //         text-align: left;
+
+    //         li {
+    //             margin-bottom: 5px;
+    //             font-size: 16px;
+    //         }
+    //     }
+    // }
+
     .carousel-container {
-      width: 80%;
-      margin-top: 20px;
-  
-      img {
-        max-width: 100%;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 5px;
-        transition: transform 0.2s;
-  
-        &:hover {
-          transform: scale(1.05);
+        width: 80%;
+        margin-top: 20px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
-      }
     }
-  
+
     .email-link {
-      margin-top: 20px;
-  
-      a {
-        text-decoration: none;
-        color: #1976d2;
-        font-size: 16px;
-  
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+        margin-top: 20px;
     }
-  }
-  
+
+    .margin-top {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 650px) {}
