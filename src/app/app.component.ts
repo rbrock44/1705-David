@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,13 @@ import { CarouselComponent } from 'ngx-owl-carousel-o';
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     MatTabsModule
   ]
 })
 export class AppComponent {
-  title: string = '1705 David'
-  @ViewChild('owlElement') owlElement!: CarouselComponent;
+  title: string = '1705 David';
+  currentIndex: number = 0;
 
   descriptionItems: string[] = [
     '3 bedrooms',
@@ -25,37 +26,44 @@ export class AppComponent {
     'Washer, Dryer hookups',
     'Shaded Front Porch',
     'Stand Up Garden Bed',
-  ]
-
-  slides = [
-    { image: 'public/living-room1.jpg', alt: 'Living Room 1' },
-    { image: 'public/living-room2.jpg', alt: 'Living Room 2' },
-    { image: 'public/bedroom1.jpg', alt: 'Bedroom 1' },
-    { image: 'public/bedroom2.jpg', alt: 'Bedroom 2' },
-    { image: 'public/kitchen1.jpg', alt: 'Kitchen 1' },
-    { image: 'public/kitchen2.jpg', alt: 'Kitchen 2' },
-    // Add more images as needed
   ];
 
-  carouselOptions = {
-    loop: true,
-    margin: 10,
-    nav: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    }
-  };
+  photos = [{
+    image: `living-room1.jpg`,
+    thumbImage: `living-room1.jpg`,
+    title: 'Living Room'
+  }, {
+    image: `living-room2.jpg`,
+    thumbImage: `living-room2.jpg`,
+  }, {
+    image: `bedroom1.jpg`,
+    thumbImage: `bedroom1.jpg`,
+    title: 'Bedroom'
+  }, {
+    image: `bedroom2.jpg`,
+    thumbImage: `bedroom2.jpg`
+  }, {
+    image: `kitchen1.jpg`,
+    thumbImage: `kitchen1.jpg`,
+    title: 'Kitchen'
+  }, {
+    image: `kitchen2.jpg`,
+    thumbImage: `kitchen2.jpg`
+  }];
 
-  scrollToSection(index: number) {
-    const sectionIndex = [0, 2, 4]; // Living Room starts at 0, Bedroom at 2, Kitchen at 4
-    this.owlElement.to([sectionIndex[index]].toString());
+  prevPhoto() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.photos.length - 1;
+    }
+  }
+
+  nextPhoto() {
+    if (this.currentIndex < this.photos.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
   }
 }
