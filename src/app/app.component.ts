@@ -1,11 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CarouselComponent } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: true
+  standalone: true,
+  imports: [
+    MatTabsModule
+  ]
 })
 export class AppComponent {
   title: string = '1705 David'
