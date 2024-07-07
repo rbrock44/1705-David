@@ -25,11 +25,11 @@
     </ul>
   </div>
 
-  <!-- <mat-tab-group (selectedTabChange)="scrollToSection($event.index)">
-    <mat-tab label="Living Room"></mat-tab>
-    <mat-tab label="Bedroom"></mat-tab>
-    <mat-tab label="Kitchen"></mat-tab>
-  </mat-tab-group> -->
+  <mat-tab-group (selectedTabChange)="this.scrollToSection($event)">
+    <div *ngFor="let tab of tabs">
+      <mat-tab label="{{tab.title}}"></mat-tab>
+    </div>
+  </mat-tab-group>
 
   <div class="photo-slider">
     <button class="nav-button" (click)="prevPhoto()">&#9664;</button>

@@ -174,3 +174,10 @@ p {
         }
     }
 }
+
+@media screen and (width < 335px) {
+    .mat-mdc-tab ::ng-deep {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}

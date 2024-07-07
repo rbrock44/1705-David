@@ -28,6 +28,18 @@ export class AppComponent {
     'Stand Up Garden Bed',
   ];
 
+  tabs: any[] = [
+    {
+      title: 'Living Room'
+    },
+    {
+      title: 'Bedroom'
+    },
+    {
+      title: 'Kitchen'
+    }
+  ];
+
   photos = [{
     image: `living-room1.jpg`,
     thumbImage: `living-room1.jpg`,
@@ -64,6 +76,13 @@ export class AppComponent {
       this.currentIndex++;
     } else {
       this.currentIndex = 0;
+    }
+  }
+
+  scrollToSection(event: any): void {
+    let photo = this.photos.find(x => x.title === event.tab.textLabel);
+    if (photo) {
+      this.currentIndex = this.photos.indexOf(photo);
     }
   }
 }
