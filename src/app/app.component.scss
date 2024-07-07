@@ -160,4 +160,17 @@ p {
     }
 }
 
-@media screen and (max-width: 650px) {}
+@media screen and (width < 800px) {
+    .container {
+        .description {
+            ul {
+                margin-left: 10%;
+                columns: 1;
+            }
+        }
+
+        .photo-slider {
+            width: 100%
+        }
+    }
+}
