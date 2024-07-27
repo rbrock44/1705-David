@@ -13,15 +13,9 @@
 
   <div class="description">
     <ul>
-      <li title="3 Bedrooms">3 bedrooms</li>
-      <li title="1.75 baths">1.75 baths</li>
-      <li title="1000 sqft">1000 sqft</li>
-      <li title="1 Car Garage">1 Car Garage</li>
-      <li title="Backyard fence, shed, patio area">Backyard fence, shed, patio area</li>
-      <li title="Central Air, Heat">Central Air, Heat</li>
-      <li title="Washer, Dryer hookups">Washer, Dryer hookups</li>
-      <li title="Shaded Front Porch">Shaded Front Porch</li>
-      <li title="Stand Up Garden Bed">Stand Up Garden Bed</li>
+      <div *ngFor="let desc of descriptionItems">
+        <li title={{desc}}>{{desc}}</li>
+      </div>
     </ul>
   </div>
 

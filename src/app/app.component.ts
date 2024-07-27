@@ -21,11 +21,13 @@ export class AppComponent {
     '1.75 baths',
     '1000 sqft',
     '1 Car Garage',
-    'Backyard fence, shed, patio area',
     'Central Air, Heat',
+    'Backyard fence, shed, patio area',
     'Washer, Dryer hookups',
     'Shaded Front Porch',
     'Stand Up Garden Bed',
+    'Alma Schrader School District',
+    'Quite Neighborhood'
   ];
 
   tabs: any[] = [
