@@ -1,192 +1,207 @@
 :host {
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
 
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
 
-    --pill-accent: var(--french-violet);
+  --pill-accent: var(--french-violet);
 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
 }
 
 p {
-    margin: 0;
-    color: var(--gray-700);
+  margin: 0;
+  color: var(--gray-700);
 }
 
 .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  --pill-accent: var(--bright-blue);
+  background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+  color: var(--pill-accent);
+  padding-inline: 0.75rem;
+  padding-block: 0.375rem;
+  border-radius: 2.75rem;
+  border: 0;
+  transition: background 0.3s ease;
+  font-family: var(--inter-font);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
 }
 
 .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
 }
 
 .pill-group .pill {
-    --pill-accent: var(--french-violet);
+  --pill-accent: var(--french-violet);
 }
 
 .pill-group svg {
-    margin-inline-start: 0.25rem;
+  margin-inline-start: 0.25rem;
 }
 
 .container {
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #BFB8B0;
+  height: max-content;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #BFB8B0;
+  padding: 0 10px;
+  box-sizing: border-box;
 
-    h1 {
-        margin-bottom: 20px;
-    }
+  h1 {
+    margin-bottom: 20px;
+  }
 
-    .description {
-        margin-bottom: 20px;
-        text-align: left;
-        width: 60%;
+  .description {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 60%;
 
-        ul {
-            padding-left: 20px;
-            columns: 2;
-            column-gap: 40px;
-            list-style: none;
-            text-align: left;
+    ul {
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 40px;
+      list-style: none;
+      text-align: left;
 
-            li {
-                margin-bottom: 5px;
-                font-size: 16px;
-                white-space: nowrap;
-                // overflow: hidden;
-                // text-overflow: ellipsis;
-                position: relative;
-                padding-left: 1em;
-
-                &::before {
-                    content: '•';
-                    position: absolute;
-                    left: 0;
-                    color: black;
-                }
-            }
-        }
-    }
-
-    .photo-slider {
+      li {
+        margin-bottom: 5px;
+        font-size: 16px;
+        white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30rem;
-    }
+        padding-left: 1em;
 
-    .photo-slider img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: black;
+        }
+      }
     }
+  }
 
-    .nav-button {
-        height: 100%;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.3);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+  .photo-slider {
+    width: 100%;
+    max-width: 50rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .nav-button:hover {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
+  .photo-slider img {
+    width: 100%;
+    height: auto;
+  }
 
-    .nav-button:first-of-type {
-        left: 0px;
-    }
+  .nav-button {
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-    .nav-button:last-of-type {
-        right: 0px;
-    }
+  .nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 
-    .email-link {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+  .nav-button:first-of-type {
+    left: 0;
+  }
 
-    .margin-top {
-        margin-top: 20px;
-    }
-}
+  .nav-button:last-of-type {
+    right: 0;
+  }
 
-@media screen and (width < 1000px) {
-  .container {
-    width: max-content;
+  .email-link {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .margin-top {
+    margin-top: 20px;
   }
 }
 
 @media screen and (width < 800px) {
-    .container {
-        .description {
-            ul {
-                margin-left: 10%;
-                columns: 1;
-            }
-        }
-
-        .photo-slider {
-            width: fit-content;
-        }
+  .container {
+    .description {
+      ul {
+        margin-left: 0;
+        columns: 1;
+        padding-left: 0;
+      }
     }
+
+    .photo-slider {
+      width: fit-content;
+    }
+  }
 }
 
 @media screen and (width < 335px) {
-    .mat-mdc-tab ::ng-deep {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
+  .mat-mdc-tab ::ng-deep {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 0 15px; /* Add some padding to the edges */
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .photo-slider {
+    width: 100%; /* Make the slider adapt to small screens */
+  }
+}
+
