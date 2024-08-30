@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatTabsModule } from '@angular/material/tabs';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
   selector: 'app-root',
@@ -32,38 +32,101 @@ export class AppComponent {
 
   tabs: any[] = [
     {
+      title: 'Yard'
+    },
+    {
       title: 'Living Room'
     },
     {
-      title: 'Bedroom'
+      title: 'Kitchen'
     },
     {
-      title: 'Kitchen'
+      title: 'Bedrooms'
+    },
+    {
+      title: 'Bathrooms'
     }
   ];
 
-  photos = [{
-    image: `living-room1.jpg`,
-    thumbImage: `living-room1.jpg`,
-    title: 'Living Room'
-  }, {
-    image: `living-room2.jpg`,
-    thumbImage: `living-room2.jpg`,
-  }, {
-    image: `bedroom1.jpg`,
-    thumbImage: `bedroom1.jpg`,
-    title: 'Bedroom'
-  }, {
-    image: `bedroom2.jpg`,
-    thumbImage: `bedroom2.jpg`
-  }, {
-    image: `kitchen1.jpg`,
-    thumbImage: `kitchen1.jpg`,
-    title: 'Kitchen'
-  }, {
-    image: `kitchen2.jpg`,
-    thumbImage: `kitchen2.jpg`
-  }];
+  photos = [
+    {
+      image: `front_1.jpg`,
+      thumbImage: `front_1.jpg`,
+      title: 'Yard'
+    },
+    {
+      image: `front_2.jpg`,
+      thumbImage: `front_2.jpg`,
+    },
+    {
+      image: `backyard_1.jpg`,
+      thumbImage: `backyard_1.jpg`,
+    },
+    {
+      image: `backyard_2.jpg`,
+      thumbImage: `backyard_2.jpg`,
+    },
+    {
+      image: `living_room_1.jpg`,
+      thumbImage: `living_room_1.jpg`,
+      title: 'Living Room'
+    },
+    {
+      image: `living_room_2.jpg`,
+      thumbImage: `living_room_2.jpg`,
+    },
+    {
+      image: `kitchen_1.jpg`,
+      thumbImage: `kitchen_1.jpg`,
+      title: 'Kitchen'
+    },
+    {
+      image: `kitchen_2.jpg`,
+      thumbImage: `kitchen_2.jpg`
+    },
+    {
+      image: `bedroom1_1.jpg`,
+      thumbImage: `bedroom1_1.jpg`,
+      title: 'Bedrooms'
+    },
+    {
+      image: `bedroom1_2.jpg`,
+      thumbImage: `bedroom1_2.jpg`
+    },
+    {
+      image: `bedroom2_1.jpg`,
+      thumbImage: `bedroom2_1.jpg`,
+    },
+    {
+      image: `bedroom2_2.jpg`,
+      thumbImage: `bedroom2_2.jpg`
+    },
+    {
+      image: `bedroom3_1.jpg`,
+      thumbImage: `bedroom3_1.jpg`,
+    },
+    {
+      image: `bedroom3_2.jpg`,
+      thumbImage: `bedroom3_2.jpg`
+    },
+    {
+      image: `bathroom1_1.jpg`,
+      thumbImage: `bathroom1_1.jpg`,
+      title: 'Bathrooms'
+    },
+    {
+      image: `bathroom1_2.jpg`,
+      thumbImage: `bathroom1_2.jpg`
+    },
+    {
+      image: `bathroom2_1.jpg`,
+      thumbImage: `bathroom2_1.jpg`,
+    },
+    {
+      image: `bathroom2_2.jpg`,
+      thumbImage: `bathroom2_2.jpg`
+    },
+  ];
 
   prevPhoto() {
     if (this.currentIndex > 0) {
