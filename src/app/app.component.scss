@@ -93,6 +93,8 @@ p {
     margin-bottom: 20px;
     text-align: left;
     width: 60%;
+    justify-content: center;
+    display: flex;
 
     ul {
       padding-left: 20px;
@@ -168,7 +170,7 @@ p {
   }
 }
 
-@media screen and (width < 800px) {
+@media screen and (width < 1000px) {
   .container {
     .description {
       ul {
