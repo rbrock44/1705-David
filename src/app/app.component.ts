@@ -18,6 +18,8 @@ export class AppComponent {
   currentIndex: number = 0;
 
   descriptionItems: string[] = [
+    '$1300 Month/Deposit',
+    'First Month + Deposit',
     '3 bedrooms',
     '1.75 baths',
     '1000 sqft',
@@ -28,7 +30,9 @@ export class AppComponent {
     'Shaded Front Porch',
     'Stand Up Garden Bed',
     'Alma Schrader School District',
-    'Quite Neighborhood'
+    'Quite Neighborhood',
+    'Pet Friendly',
+    'Initial Pet Fee + Monthly Fee',
   ];
 
   tabs: any[] = [
