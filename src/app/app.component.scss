@@ -170,7 +170,7 @@ p {
   }
 }
 
-@media screen and (width < 1000px) {
+@media screen and (width < 800px) {
   .container {
     .description {
       ul {
@@ -195,7 +195,7 @@ p {
 
 @media screen and (max-width: 375px) {
   .container {
-    padding: 0 15px; /* Add some padding to the edges */
+    padding: 0 15px;
   }
 
   .description {
@@ -203,7 +203,7 @@ p {
   }
 
   .photo-slider {
-    width: 100%; /* Make the slider adapt to small screens */
+    width: 100%;
   }
 }
 
