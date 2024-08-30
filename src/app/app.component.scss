@@ -207,3 +207,15 @@ p {
   }
 }
 
+@media screen and (orientation: portrait) {
+  .container {
+    .description {
+      ul {
+        margin-left: 0;
+        columns: 1;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
