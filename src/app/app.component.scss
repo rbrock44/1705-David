@@ -163,6 +163,12 @@ p {
     }
 }
 
+@media screen and (width < 1000px) {
+  .container {
+    width: max-content;
+  }
+}
+
 @media screen and (width < 800px) {
     .container {
         .description {
