@@ -13,6 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   ]
 })
 export class AppComponent {
+  availableForRent: boolean = false;
   emailLink: string = 'mailto:rbrock444@gmail.com?subject=1705%20David%20Rental%20Inquiry';
   title: string = '1705 David';
   currentIndex: number = 0;

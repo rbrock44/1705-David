@@ -41,9 +41,13 @@
     </a>
   </div>
 
-  <div class="email-link pill-group">
-    <a class="pill" href="{{emailLink}}"
-      target="_blank" rel="noopener">
+  <div class="margin-top">
+    <h5 *ngIf="availableForRent">House Available to Rent</h5>
+    <p *ngIf="!availableForRent">House Occupied, not available for rent</p>
+  </div>
+
+  <div class="margin-bottom pill-group" *ngIf="availableForRent">
+    <a class="pill" href="{{emailLink}}" target="_blank" rel="noopener">
       <span>Email about Rental Application</span>
       <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
         <path
