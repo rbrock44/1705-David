@@ -30,7 +30,7 @@ jobs:
 
     - name: Add CNAME
       run: |
-        cp CNAME ./dist/home-page/CNAME
+        cp CNAME ./dist/1705-david/CNAME
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
