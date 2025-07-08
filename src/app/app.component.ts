@@ -19,7 +19,7 @@ export class AppComponent {
   currentIndex: number = 0;
 
   descriptionItems: string[] = [
-    '$1300 Month/Deposit',
+    '$1400 Month/Deposit',
     'First Month + Deposit',
     '3 bedrooms',
     '1.75 baths',
