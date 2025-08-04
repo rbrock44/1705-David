@@ -1,10 +1,5 @@
 # 1705-David
 
-This project is to showcase a house (1705 David) to potential renters
-
-
-# 1705-David
-
 > This project hosts links and descriptions of software projects I've created <br/>
 > [Live - 1705 David Website](https://1705-david.ryan-brock.com/)
 
