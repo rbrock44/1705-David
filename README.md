@@ -27,8 +27,6 @@ This is a server side single-page angular frontend created to showcase a house (
 
 ## 🛠 Technologies
 
-List the tools, languages, or frameworks used.
-
 - Framework: `Angular 18`
 - Testing: `Karma`
 - Deployment: `GitHub Pages`
