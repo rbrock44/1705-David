@@ -3,11 +3,15 @@
 > This project hosts links and descriptions of software projects I've created <br/>
 > [Live - 1705 David Website](https://1705-david.ryan-brock.com/)
 
+Screenshot:
+![preview](/screenshots/main.png)
+
 ---
 
 ## 📚 Table of Contents
 
 - [What's My Purpose?](#-whats-my-purpose)
+- [How to Use](#-how-to-use)
 - [Technologies](#-technologies)
 - [Getting Started (Local Setup)](#-getting-started-local-setup)
   - [Run Locally](#run-locally)
@@ -20,8 +24,22 @@
 
 ## 🧠 What's My Purpose?
 
-  
 This is a server side single-page angular frontend created to showcase a house (1705 David) to potential renters and maybe for them to get in touch
+
+---
+
+## 🚦 How to Use
+
+- `Google Map Link` - This redirect to google maps, showing the house/property
+- `Photo Buttons` 
+    - There are header buttons to jump to main rooms
+    - There are buttons on the side(s) of images allowing forward and backward navigation
+- `Contact` 
+    - `House Occupied, not available for rent` shows when house is not for rent
+    - Otherwise a button with email mail to link (to me) will be at the bottom
+
+Screenshot:
+![preview](/screenshots/main.png)
 
 ---
 
