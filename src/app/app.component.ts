@@ -1,15 +1,12 @@
 
 import {Component, ChangeDetectionStrategy} from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [
-    MatTabsModule
-]
+    imports: []
 })
 export class AppComponent {
   availableForRent: boolean = false;
@@ -17,41 +14,28 @@ export class AppComponent {
   title: string = '1705 David';
   currentIndex: number = 0;
 
-  descriptionItems: string[] = [
-    '$1400 Month/Deposit',
+  specFacts: string[] = [
+    '$1,400/mo',
+    '3 Bed',
+    '1.75 Bath',
+    '1,000 Sqft',
+    '1-Car Garage',
+  ];
+
+  featureItems: string[] = [
     'First Month + Deposit',
-    '3 bedrooms',
-    '1.75 baths',
-    '1000 sqft',
-    '1 Car Garage',
     'Central Air, Heat',
     'Backyard fence, shed, patio area',
     'Washer, Dryer hookups',
     'Shaded Front Porch',
     'Stand Up Garden Bed',
     'Alma Schrader School District',
-    'Quite Neighborhood',
+    'Quiet Neighborhood',
     'Pet Friendly',
     'Initial Pet Fee + Monthly Fee',
   ];
 
-  tabs: any[] = [
-    {
-      title: 'Yard'
-    },
-    {
-      title: 'Living Room'
-    },
-    {
-      title: 'Kitchen'
-    },
-    {
-      title: 'Bedrooms'
-    },
-    {
-      title: 'Bathrooms'
-    }
-  ];
+  rooms: string[] = ['Yard', 'Living Room', 'Kitchen', 'Bedrooms', 'Bathrooms'];
 
   photos = [
     {
@@ -149,10 +133,19 @@ export class AppComponent {
     }
   }
 
-  scrollToSection(event: any): void {
-    let photo = this.photos.find(x => x.title === event.tab.textLabel);
+  selectRoom(room: string): void {
+    const photo = this.photos.find(x => x.title === room);
     if (photo) {
       this.currentIndex = this.photos.indexOf(photo);
     }
+  }
+
+  currentRoom(): string {
+    for (let i = this.currentIndex; i >= 0; i--) {
+      if (this.photos[i].title) {
+        return this.photos[i].title as string;
+      }
+    }
+    return this.rooms[0];
   }
 }

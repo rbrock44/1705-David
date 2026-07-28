@@ -1,70 +1,84 @@
-<div class="container">
-  <h1 class="margin-top">1705 David Street</h1>
-  <div class="pill-group">
-    <a class="pill" href="https://maps.app.goo.gl/vHWz9aooKPv8ZiWp6" target="_blank" rel="noopener">
-      <span>Google Map Link</span>
-      <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
-        <path
-          d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+<div class="page">
+
+  <header class="hero">
+    <img class="hero__photo" src="front_1.jpg" alt="Front exterior of 1705 David Street, a single-story home with a covered porch">
+
+    <div class="hero__plaque">
+      <p class="status" [class.status--available]="availableForRent">
+        <span class="status__dot"></span>
+        {{ availableForRent ? 'Available for Rent' : 'Currently Occupied' }}
+      </p>
+
+      <h1 class="address">
+        <span class="address__street">1705 David Street</span>
+      </h1>
+
+      <a class="map-link" href="https://maps.app.goo.gl/vHWz9aooKPv8ZiWp6" target="_blank" rel="noopener">
+        <span>View on Google Maps</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
         </svg>
       </a>
     </div>
+  </header>
 
-    <div class="description">
+  <p class="spec-strip" aria-label="Key facts">
+    @for (fact of specFacts; track fact; let last = $last) {
+      <span class="spec">{{ fact }}</span>
+      @if (!last) {
+        <span class="spec-strip__divider" aria-hidden="true">&middot;</span>
+      }
+    }
+  </p>
+
+  <main class="content">
+    <section class="features">
+      <h2>What's Included</h2>
       <ul>
-        @for (desc of descriptionItems; track desc) {
-          <div>
-            <li title={{desc}}>{{desc}}</li>
-          </div>
+        @for (item of featureItems; track item) {
+          <li>{{ item }}</li>
         }
       </ul>
-    </div>
+    </section>
 
-    <mat-tab-group (selectedTabChange)="this.scrollToSection($event)">
-      @for (tab of tabs; track tab) {
-        <div>
-          <mat-tab label="{{tab.title}}"></mat-tab>
-        </div>
-      }
-    </mat-tab-group>
-
-    <div class="photo-slider">
-      <button class="nav-button" (click)="prevPhoto()">&#9664;</button>
-      <img [src]="photos[currentIndex].image" alt="Photo">
-      <button class="nav-button" (click)="nextPhoto()">&#9654;</button>
-    </div>
-
-    <!--  TODO: create rental application or add fields to email-->
-    @if (false) {
-      <div class="application pill-group">
-        <a class="pill" href="" download="front_1.jpg" target="_blank" rel="noopener">
-          <span>Download Rental Application</span>
+    <aside class="contact-card">
+      <h2>Interested?</h2>
+      @if (availableForRent) {
+        <p>This home is available now. Reach out and we'll get back to you.</p>
+        <a class="btn" href="{{emailLink}}" target="_blank" rel="noopener">
+          <span>Email About This Rental</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
             <path
               d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
-            </svg>
-          </a>
-        </div>
+          </svg>
+        </a>
+      } @else {
+        <p>Not available right now &mdash; this home is currently occupied. Check back for updates.</p>
       }
+    </aside>
+  </main>
 
-      <div class="margin-top">
-        @if (availableForRent) {
-          <h5>House Available to Rent</h5>
-        }
-        @if (!availableForRent) {
-          <p>House Occupied, not available for rent</p>
-        }
-      </div>
+  <section class="gallery">
+    <h2>Take a Look Inside</h2>
 
-      @if (availableForRent) {
-        <div class="margin-bottom pill-group">
-          <a class="pill" href="{{emailLink}}" target="_blank" rel="noopener">
-            <span>Email about Rental Application</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 -960 960 960" width="14" fill="currentColor">
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
-              </svg>
-            </a>
-          </div>
-        }
-      </div>
+    <nav class="rooms" aria-label="Rooms">
+      @for (room of rooms; track room) {
+        <button type="button" class="room" [class.room--active]="currentRoom() === room" (click)="selectRoom(room)">
+          {{ room }}
+        </button>
+      }
+    </nav>
+
+    <div class="photo-slider">
+      <button class="nav-button nav-button--prev" (click)="prevPhoto()" aria-label="Previous photo">&#9664;</button>
+      <img [src]="photos[currentIndex].image" alt="{{ currentRoom() }} at 1705 David Street">
+      <button class="nav-button nav-button--next" (click)="nextPhoto()" aria-label="Next photo">&#9654;</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>1705 David Street &middot; Alma Schrader School District &middot; Quiet Neighborhood</p>
+  </footer>
+
+</div>
