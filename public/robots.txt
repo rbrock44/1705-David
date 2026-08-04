@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://1705-david.ryan-brock.com/sitemap.xml
