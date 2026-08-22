@@ -4,7 +4,7 @@
 > [Live - 1705 David Website](https://1705-david.ryan-brock.com/)
 
 Screenshot:
-![preview](/screenshots/main.png)
+![preview](/screenshot/main.png)
 
 ---
 
@@ -19,6 +19,7 @@ Screenshot:
   - [GitHub Hooks](#github-hooks)
   - [Build](#build)
   - [Deploy](#deploy)
+- [How to Contribute](#-how-to-contribute)
 
 ---
 
@@ -39,7 +40,7 @@ This is a server side single-page angular frontend created to showcase a house (
     - Otherwise a button with email mail to link (to me) will be at the bottom
 
 Screenshot:
-![preview](/screenshots/main.png)
+![preview](/screenshot/main.png)
 
 ---
 
@@ -93,5 +94,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Deploy
 
 Run `npm run prod` to build and deploy the project. Make sure to be on `master` and that it is up to date before running the command. It's really meant to be a CI/CD action
+
+---
+
+## 🤝 How to Contribute
+
+Found a typo or a small, obvious fix? Open a PR directly.
+Want to change behavior or add something bigger? Open an issue first so we can talk it through before you put in the work.
 
 ---
