@@ -1,6 +1,6 @@
 # 1705-David
 
-> This project hosts links and descriptions of software projects I've created <br/>
+> This project is to showcase a house (1705 David) to potential renters <br/>
 > [Live - 1705 David Website](https://1705-david.ryan-brock.com/)
 
 Screenshot:
@@ -31,13 +31,15 @@ This is a server side single-page angular frontend created to showcase a house (
 
 ## 🚦 How to Use
 
-- `Google Map Link` - This redirect to google maps, showing the house/property
-- `Photo Buttons` 
-    - There are header buttons to jump to main rooms
-    - There are buttons on the side(s) of images allowing forward and backward navigation
-- `Contact` 
-    - `House Occupied, not available for rent` shows when house is not for rent
-    - Otherwise a button with email mail to link (to me) will be at the bottom
+- `Listing Header` - Shows the address, a rent/occupied status badge, and a link out to Google Maps for the property
+- `Spec Strip` - Price, bed, bath, square footage, and garage listed across a single line
+- `What's Included` - List of what comes with the rental (utilities setup, yard, hookups, school district, pet terms)
+- `Photo Gallery`
+    - Room buttons jump straight to the first photo of that room (Yard, Living Room, Kitchen, Bedrooms, Bathrooms)
+    - Arrow buttons on either side of the photo step forward and backward, wrapping around at both ends
+- `Interested?`
+    - `Currently Occupied` shows when the house is not for rent
+    - Otherwise a button with an email mail to link (to me) is shown
 
 Screenshot:
 ![preview](/screenshot/main.png)
@@ -46,7 +48,7 @@ Screenshot:
 
 ## 🛠 Technologies
 
-- Framework: `Angular 18`
+- Framework: `Angular 22`
 - Testing: `Karma`
 - Deployment: `GitHub Pages`
 
@@ -54,7 +56,7 @@ Screenshot:
 
 ## 🚀 Getting Started (Local Setup)
 
-* Install [node](https://nodejs.org/en) - v18 is needed (v20 also works)
+* Install [node](https://nodejs.org/en) - v24 is needed (v22 also works)
 * Clone [repo](https://github.com/rbrock44/1705-David)
 
 ---
